@@ -10,14 +10,16 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<Auth />} />
+        <Route path="box" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="auth" element={<Auth />} />
-          <Route path="contact" element={<Contact />} />
+          
           <Route path="profile" element={<ProfileLayout />}>
             <Route index element={<Profile />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Route>
+        <Route path="*" element={<h1>Not faund</h1>}/>
       </Routes>
     </>
   );
